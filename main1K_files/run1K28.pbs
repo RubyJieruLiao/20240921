@@ -1,0 +1,15 @@
+#!/bin/bash
+#PBS -P TB_NN_INFOTHEORY
+#PBS -o main1K28_output.log   
+#PBS -e main1K28_error.log    
+#PBS -l select=1:ncpus=1:mem=8GB   
+#PBS -l walltime=20:00:00
+
+module load matlab
+
+cd $PBS_O_WORKDIR
+
+matlab -nodisplay -nosplash -r "run('main1K28.m');exit;"
+
+
+
